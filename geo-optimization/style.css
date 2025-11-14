@@ -1,0 +1,490 @@
+/* Базовые стили */
+:root {
+    --primary-color: #6a11cb; /* Глубокий фиолетовый */
+    --secondary-color: #2575fc; /* Яркий синий */
+    --dark-bg: #121212;
+    --light-bg: #1e1e1e;
+    --text-color: #f0f0f0;
+    --text-muted: #aaaaaa;
+    --container-width: 1100px;
+    --border-color: #333;
+}
+
+/* Глобальная настройка для плавной прокрутки */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--dark-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    margin-top: 0;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* Кнопка CTA (Call to Action) */
+.cta-button {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    /* Новые стили для центрирования кнопок внутри flex-контейнера */
+    align-self: center; 
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Стиль для "второстепенных" кнопок */
+.cta-button.outline {
+    background: transparent;
+    border: 2px solid var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.cta-button.outline:hover {
+    background: var(--secondary-color);
+    color: #fff;
+}
+
+
+/* Хедер и Навигация */
+.header {
+    /* --- ИЗМЕНЕНИЕ ЗДЕСЬ --- */
+    background: rgba(18, 18, 18, 0.6); /* Увеличена прозрачность до 60% */
+    /* --- КОНЕЦ ИЗМЕНЕНИЯ --- */
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px); /* Эффект размытия */
+}
+
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.main-nav li {
+    margin-left: 30px;
+}
+
+.main-nav a {
+    color: var(--text-muted);
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    border-bottom: 2px solid transparent;
+}
+
+/* Активный пункт меню */
+.main-nav a:hover, .main-nav a.current {
+    color: var(--text-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.nav-cta {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    border-bottom: none !important; /* Убираем подчеркивание у кнопки */
+}
+
+.nav-cta:hover {
+    background: var(--secondary-color);
+    color: #fff !important;
+    border-bottom: none !important;
+}
+
+/* Hero-экран */
+.hero {
+    text-align: center;
+    padding: 100px 0;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1 {
+    margin-bottom: 20px;
+}
+
+.hero h2 {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    max-width: 800px;
+    margin: 0 auto 40px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Секция Проблема/Решение */
+.problem-solution {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 0; /* Убираем лишний отступ */
+}
+.problem-solution p {
+    font-size: 1.2rem;
+}
+
+/* НОВЫЙ БЛОК: Секция 'Об Услуге' (Таблица) */
+.about-geo-section {
+    background-color: var(--light-bg);
+}
+.about-geo-section p {
+    text-align: center;
+    max-width: 800px;
+    margin: -20px auto 40px;
+}
+
+.seo-vs-geo-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    font-size: 1rem;
+}
+
+.seo-vs-geo-table th, .seo-vs-geo-table td {
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+.seo-vs-geo-table th {
+    background-color: var(--dark-bg);
+    font-size: 1.1rem;
+}
+
+.seo-vs-geo-table td:nth-child(1) {
+    width: 25%;
+}
+.seo-vs-geo-table td:nth-child(2) {
+    color: var(--text-muted);
+}
+.seo-vs-geo-table td:nth-child(3) {
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+
+/* Секция Услуги / Этапы */
+.services {
+    background-color: var(--dark-bg); /* Снова темный фон */
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Делаем 4 колонки для Этапов */
+.process-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.service-card {
+    background: var(--light-bg);
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    
+    /* 1. Стили для анимации появления (как у pricing-card) */
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    
+    /* 2. Добавляем box-shadow в transition для плавного свечения */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 3. Новый класс reveal для .service-card */
+.service-card.reveal {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+/* 4. Добавляем свечение (box-shadow) при наведении */
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary-color); /* Меняем на синий для свечения */
+    box-shadow: 0 0 30px rgba(37, 117, 252, 0.5); /* Свечение! */
+}
+/* --- КОНЕЦ ИЗМЕНЕНИЙ --- */
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+/* НОВЫЙ БЛОК: Секция Цены */
+.pricing {
+    background-color: var(--light-bg);
+}
+.pricing p {
+    text-align: center;
+    max-width: 600px;
+    margin: -20px auto 40px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-items: stretch; /* Карточки одинаковой высоты */
+}
+
+.pricing-card {
+    background: var(--dark-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    /* Анимация появления */
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* При появлении */
+.pricing-card.reveal {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+
+/* Выделенная карточка */
+.pricing-card.popular {
+    /* Более выраженное свечение */
+    border-color: var(--secondary-color); /* Изменил на синий для контраста с тенью */
+    border-width: 3px; /* Увеличил толщину */
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(37, 117, 252, 0.6), 0 0 80px rgba(37, 117, 252, 0.3); /* Больше свечения */
+    z-index: 1; /* Чтобы была поверх других, если есть наложения */
+}
+
+.pricing-card.popular.reveal {
+    /* Чтобы анимация не конфликтовала с transform: scale(1.05) */
+    transform: scale(1.05) translateY(0);
+}
+
+.pricing-card h3 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+}
+
+.pricing-card .price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin: 10px 0 5px;
+}
+
+.pricing-card .price-desc {
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.pricing-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    flex-grow: 1; /* Растягивает список, толкая кнопку вниз */
+}
+
+.pricing-card li {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+}
+
+/* Галочка в списке */
+.pricing-card li::before {
+    content: '✓';
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.pricing-card .cta-button {
+    width: auto; /* Позволяем кнопке подстраиваться под контент */
+    min-width: 180px; /* Минимальная ширина для хорошего вида */
+    margin-top: auto; /* Прижимает кнопку к низу */
+}
+
+
+/* Секция CTA (Форма) */
+.contact-cta {
+    text-align: center;
+}
+.contact-cta h2 {
+    margin-bottom: 15px;
+}
+.contact-cta p {
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+#contact-form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"] {
+    padding: 15px;
+    font-size: 1rem;
+    border-radius: 50px;
+    border: 1px solid #555;
+    background: var(--light-bg);
+    color: var(--text-color);
+    flex: 1;
+    min-width: 200px;
+}
+
+#contact-form input::placeholder {
+    color: var(--text-muted);
+}
+
+#contact-form button {
+    flex-basis: 200px; /* Чтобы кнопка была в той же строке, если есть место */
+}
+
+/* Футер */
+.footer {
+    background: #000;
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 60px;
+    color: var(--text-muted);
+    border-top: 1px solid var(--border-color);
+}
+
+/* Адаптивность (простой пример) */
+@media (max-width: 992px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+    .pricing-card.popular {
+        transform: scale(1); /* Убираем увеличение на мобильных */
+    }
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .main-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #contact-form {
+        flex-direction: column;
+    }
+    #contact-form button {
+        width: 100%;
+    }
+    .main-nav ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .main-nav li {
+        margin-left: 0;
+    }
+}
